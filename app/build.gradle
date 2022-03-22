@@ -18,10 +18,14 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        generatedDensities = []
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    aaptOptions {
+        additionalParameters "--no-version-vectors"
+    }
     buildTypes {
         release {
             minifyEnabled false

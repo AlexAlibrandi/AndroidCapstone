@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/drawable/ic_circle_profile_image.xml" value="0.14" />
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/drawable/ic_undraw_doctor_kw_5_l.xml" value="0.14" />
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/drawable/rounded_corner_view.xml" value="0.14" />
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/layout/about_us.xml" value="0.4126984126984127" />
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/layout/activity_forgot_password.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/layout/activity_login.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/layout/activity_register.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/layout/activity_splash_screen.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Frale/Downloads/AndroidCapstone/app/src/main/res/layout/dashboard.xml" value="0.2695035460992908" />
         <entry key="app/src/main/res/font/aldrich.xml" value="0.315625" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.28541666666666665" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5082051282051282" />
