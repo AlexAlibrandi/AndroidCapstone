@@ -89,7 +89,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val firebaseUser: FirebaseUser? = task.result?.user
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, AboutUsActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     if (firebaseUser != null) {
                         intent.putExtra("user_id", firebaseUser.uid)
@@ -125,7 +125,7 @@ class LoginActivity : AppCompatActivity() {
                     .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         val firebaseUser: FirebaseUser? = task.result?.user
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, AboutUsActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         if (firebaseUser != null) {
                             intent.putExtra("user_id", firebaseUser.uid)
