@@ -19,5 +19,10 @@ class DashboardActivity : AppCompatActivity() {
             val intent = Intent(this@DashboardActivity,ImageClassificationActivity::class.java)
             startActivity(intent)
         }
+        dashboardBinding.liveFeed.setOnClickListener {
+            val intent = Intent(this@DashboardActivity,LiveFeedClassificationActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
