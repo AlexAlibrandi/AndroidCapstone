@@ -1,4 +1,4 @@
-package com.android.capstone
+package com.android.capstone.imageclassification
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,9 +17,7 @@ import android.util.Log
 import android.util.Size
 import android.view.Surface
 import android.widget.TextView
-import com.android.capstone.imageclassification.CameraConnectionFragment
-import com.android.capstone.imageclassification.Classifier
-import com.android.capstone.imageclassification.ImageUtils
+import com.android.capstone.R
 
 @Suppress("DEPRECATION")
 class LiveFeedClassificationActivity : AppCompatActivity(), ImageReader.OnImageAvailableListener {

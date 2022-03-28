@@ -1,4 +1,4 @@
-package com.android.capstone
+package com.android.capstone.imageclassification
 
 import android.Manifest
 import android.annotation.SuppressLint

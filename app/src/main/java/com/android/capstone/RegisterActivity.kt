@@ -58,7 +58,7 @@ class RegisterActivity : AppCompatActivity() {
 
             else -> {
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AboutUsActivity::class.java)
 
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(
                 binding.emailReg.text.toString().trim(){it <= ' '},

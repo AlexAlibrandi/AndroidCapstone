@@ -17,13 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidCapstone">
         <activity
-            android:name=".LiveFeedClassificationActivity"
+            android:name=".imageclassification.LiveFeedClassificationActivity"
             android:exported="false" />
         <activity
             android:name=".LiveFeedClassActivity"
             android:exported="false" />
         <activity
-            android:name=".ImageClassificationActivity"
+            android:name=".imageclassification.ImageClassificationActivity"
             android:exported="false" />
         <activity
             android:name=".ForgotPasswordActivity"
