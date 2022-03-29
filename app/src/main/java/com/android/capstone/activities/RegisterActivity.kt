@@ -11,7 +11,6 @@ import com.android.capstone.firebase.FirestoreClass
 import com.android.capstone.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.ktx.Firebase
 
 private lateinit var binding : ActivityRegisterBinding
 

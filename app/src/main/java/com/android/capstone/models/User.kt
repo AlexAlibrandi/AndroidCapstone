@@ -2,7 +2,6 @@ package com.android.capstone.models
 
 import android.os.Parcel
 import android.os.Parcelable
-import android.widget.EditText
 
 data class User(
     val id: String = "",
