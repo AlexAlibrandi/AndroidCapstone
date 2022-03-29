@@ -1,12 +1,12 @@
-0 Acne and Rosacea
-1 Atopic Dermatitis 
-2 Bullous Disease 
-3 Eczema
-4 Hair Loss Photos Alopecia and other Hair Diseases
-5 Herpes HPV and other STDs 
-6 Poison Ivy Photos and other Contact Dermatitis
-7 Psoriasis Lichen Planus and related diseases
-8 Scabies Lyme Disease Infestations Bites
-9 Tinea Ringworm Candidiasis and other Fungal Infect
-10 Urticaria Hives
-11 Warts Molluscum and other Viral Infections
+Acne and Rosacea
+Atopic Dermatitis 
+Bullous Disease 
+Eczema
+Hair Loss Photos Alopecia and other Hair Diseases
+Herpes HPV and other STDs 
+Poison Ivy Photos and other Contact Dermatitis
+Psoriasis Lichen Planus and related diseases
+Scabies Lyme Disease Infestations Bites
+Tinea Ringworm Candidiasis and other Fungal Infect
+Urticaria Hives
+Warts Molluscum and other Viral Infections
