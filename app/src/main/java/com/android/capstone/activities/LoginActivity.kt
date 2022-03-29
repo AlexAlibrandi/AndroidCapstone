@@ -1,4 +1,4 @@
-package com.android.capstone
+package com.android.capstone.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.capstone.R
 import com.android.capstone.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -88,13 +89,7 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val firebaseUser: FirebaseUser? = task.result?.user
                     val intent = Intent(this, AboutUsActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    if (firebaseUser != null) {
-                        intent.putExtra("user_id", firebaseUser.uid)
-                    }
-                    intent.putExtra("email_id", firebaseUser!!.email.toString())
                     Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                     startActivity(intent)
                     finish()
@@ -124,13 +119,8 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(binding.emailLog.text.toString(), binding.passwordLog.text.toString())
                     .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        val firebaseUser: FirebaseUser? = task.result?.user
                         val intent = Intent(this, AboutUsActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        if (firebaseUser != null) {
-                            intent.putExtra("user_id", firebaseUser.uid)
-                        }
-                        intent.putExtra("email_id", binding.emailLog.text.toString())
                         Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                         startActivity(intent)
                         finish()

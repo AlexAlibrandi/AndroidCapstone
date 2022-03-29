@@ -12,7 +12,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Don't be rash"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidCapstone">
@@ -20,16 +20,13 @@
             android:name=".imageclassification.LiveFeedClassificationActivity"
             android:exported="false" />
         <activity
-            android:name=".LiveFeedClassActivity"
-            android:exported="false" />
-        <activity
             android:name=".imageclassification.ImageClassificationActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".activities.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".activities.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,19 +35,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".AboutUsActivity"
+            android:name=".activities.AboutUsActivity"
             android:exported="true" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".activities.DashboardActivity"
             android:exported="true" />
 
         <meta-data

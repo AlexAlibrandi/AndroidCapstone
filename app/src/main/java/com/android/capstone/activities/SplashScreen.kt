@@ -1,4 +1,4 @@
-package com.android.capstone
+package com.android.capstone.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,9 +7,8 @@ import android.os.Handler
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.android.capstone.R
 import com.android.capstone.databinding.ActivitySplashScreenBinding
-
-
 
 class SplashScreen : AppCompatActivity() {
     lateinit var mainBinding: ActivitySplashScreenBinding
