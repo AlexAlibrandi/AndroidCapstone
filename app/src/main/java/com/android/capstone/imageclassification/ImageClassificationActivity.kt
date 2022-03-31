@@ -23,8 +23,17 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.android.capstone.R
 import com.android.capstone.databinding.ActivityImageClassificationBinding
+import com.android.capstone.firebase.FirestoreClass
+import com.android.capstone.models.ResultsModel
+import com.android.capstone.models.User
+import com.android.capstone.utils.Constants
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import org.w3c.dom.Text
 import java.io.IOException
+
+ val mFireStore = FirebaseFirestore.getInstance()
 
 class ImageClassificationActivity : AppCompatActivity() {
 
@@ -108,6 +117,10 @@ class ImageClassificationActivity : AppCompatActivity() {
         }
     }
 
+
+
+
+
     //TODO pass image to the model and shows the results on screen
     fun doInference() {
         val bitmap : Bitmap? = uriToBitmap(image_uri!!)
@@ -119,9 +132,6 @@ class ImageClassificationActivity : AppCompatActivity() {
            binding.resultTv?.append(r.title + "  " + r.confidence + "\n")
         }
 
-
-
-
         //Take us to the next page
         binding.buttonResults.visibility = View.VISIBLE
         binding.buttonResults.setOnClickListener {
@@ -132,10 +142,17 @@ class ImageClassificationActivity : AppCompatActivity() {
             for(r in results!!){
                 binding.resultTitle?.append(r.title)
                 binding.resultValue?.append( r.confidence.toString())
+                val hashMap = ResultsModel(
+                   title = binding.resultTitle.text.toString(),
+                    confidence = binding.resultValue.text.toString().toFloat(),
+                )
+
+                FirestoreClass().writeDataOnFirestore(this, hashMap)
                 val i = Intent(this, LineChartActivity::class.java).apply {
                     putExtra("Title", binding.resultTitle?.text.toString())
                     putExtra("Confidence", binding.resultValue?.text.toString())
                 }
+
 
             val intent = Intent(this@ImageClassificationActivity, LineChartActivity::class.java)
             startActivity(intent)
@@ -163,6 +180,8 @@ class ImageClassificationActivity : AppCompatActivity() {
         }
         return null
     }
+
+
 
     //TODO rotate image if image captured on samsung devices
     //Most phone cameras are landscape, meaning if you take the photo in portrait, the resulting photos will be rotated 90 degrees.
