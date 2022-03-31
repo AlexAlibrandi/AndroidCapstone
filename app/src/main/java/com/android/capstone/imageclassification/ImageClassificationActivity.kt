@@ -1,5 +1,6 @@
 package com.android.capstone.imageclassification
 
+import com.android.capstone.activities.LineChartActivity
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -16,15 +17,19 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.view.View.OnLongClickListener
+import android.widget.Button
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.android.capstone.R
 import com.android.capstone.databinding.ActivityImageClassificationBinding
-import com.android.capstone.imageclassification.Classifier
+import org.w3c.dom.Text
 import java.io.IOException
 
 class ImageClassificationActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityImageClassificationBinding
+
 
     private val RESULT_LOAD_IMAGE = 123
     val IMAGE_CAPTURE_CODE = 654
@@ -32,6 +37,8 @@ class ImageClassificationActivity : AppCompatActivity() {
     private var image_uri: Uri? = null
 
     var classifier : Classifier? = null
+
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +50,10 @@ class ImageClassificationActivity : AppCompatActivity() {
             val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE)
         })
+
+        binding.buttonResults.visibility = View.GONE
+        binding.resultTitle.visibility = View.GONE
+        binding.resultValue.visibility = View.GONE
 
         binding.frame?.setOnLongClickListener(OnLongClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -85,6 +96,7 @@ class ImageClassificationActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
             image_uri = data.data
             binding.innerImage!!.setImageURI(image_uri)
@@ -101,10 +113,40 @@ class ImageClassificationActivity : AppCompatActivity() {
         val bitmap : Bitmap? = uriToBitmap(image_uri!!)
         val rotated : Bitmap? = rotateBitmap(bitmap!!)
         val results  = classifier?.recognizeImage(rotated!!)
+        //Show Results on the screen
         binding.resultTv?.text = " "
         for(r in results!!){
-            binding.resultTv?.append(r.title + "  " + r.confidence + "\n")
+           binding.resultTv?.append(r.title + "  " + r.confidence + "\n")
         }
+
+
+
+
+        //Take us to the next page
+        binding.buttonResults.visibility = View.VISIBLE
+        binding.buttonResults.setOnClickListener {
+            binding.resultTitle?.text = ""
+            binding.resultValue?.text = ""
+
+            //going to bind new values and transfer
+            for(r in results!!){
+                binding.resultTitle?.append(r.title)
+                binding.resultValue?.append( r.confidence.toString())
+                val i = Intent(this, LineChartActivity::class.java).apply {
+                    putExtra("Title", binding.resultTitle?.text.toString())
+                    putExtra("Confidence", binding.resultValue?.text.toString())
+                }
+
+            val intent = Intent(this@ImageClassificationActivity, LineChartActivity::class.java)
+            startActivity(intent)
+                startActivity(i)
+        }
+
+
+
+
+        }
+
     }
 
     //TODO takes URI of the image and returns bitmap

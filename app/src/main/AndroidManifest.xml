@@ -49,6 +49,9 @@
         <activity
             android:name=".activities.DashboardActivity"
             android:exported="true" />
+        <activity
+            android:name=".activities.LineChartActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
