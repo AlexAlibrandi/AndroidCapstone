@@ -23,6 +23,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.android.capstone.R
 import com.android.capstone.databinding.ActivityImageClassificationBinding
+<<<<<<< HEAD
 import com.android.capstone.firebase.FirestoreClass
 import com.android.capstone.models.ResultsModel
 import com.android.capstone.models.User
@@ -30,6 +31,9 @@ import com.android.capstone.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+=======
+import com.google.firebase.firestore.FirebaseFirestore
+>>>>>>> f2dcfa988c2e8be128298714f78c563b50e269f6
 import org.w3c.dom.Text
 import java.io.IOException
 
@@ -38,6 +42,8 @@ import java.io.IOException
 class ImageClassificationActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityImageClassificationBinding
+
+    private val mFireStore = FirebaseFirestore.getInstance()
 
 
     private val RESULT_LOAD_IMAGE = 123
