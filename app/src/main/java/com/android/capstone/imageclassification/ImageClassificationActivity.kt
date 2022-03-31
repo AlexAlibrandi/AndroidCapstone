@@ -23,12 +23,15 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.android.capstone.R
 import com.android.capstone.databinding.ActivityImageClassificationBinding
+import com.google.firebase.firestore.FirebaseFirestore
 import org.w3c.dom.Text
 import java.io.IOException
 
 class ImageClassificationActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityImageClassificationBinding
+
+    private val mFireStore = FirebaseFirestore.getInstance()
 
 
     private val RESULT_LOAD_IMAGE = 123

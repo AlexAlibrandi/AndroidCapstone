@@ -10,6 +10,6 @@ data class User(
     val firstName: String = "",
     val lastName: String = "",
     val email: String = "",
-    val results: @RawValue ArrayList<ResultsModel>? = null
+    val results: @RawValue ArrayList<ResultsModel> = ArrayList()
 
 ): Parcelable
