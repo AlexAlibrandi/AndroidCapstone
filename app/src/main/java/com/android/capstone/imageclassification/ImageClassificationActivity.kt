@@ -17,24 +17,12 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.view.View.OnLongClickListener
-import android.widget.Button
-import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.android.capstone.R
 import com.android.capstone.databinding.ActivityImageClassificationBinding
-<<<<<<< HEAD
 import com.android.capstone.firebase.FirestoreClass
 import com.android.capstone.models.ResultsModel
-import com.android.capstone.models.User
-import com.android.capstone.utils.Constants
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.SetOptions
-=======
-import com.google.firebase.firestore.FirebaseFirestore
->>>>>>> f2dcfa988c2e8be128298714f78c563b50e269f6
-import org.w3c.dom.Text
 import java.io.IOException
 
  val mFireStore = FirebaseFirestore.getInstance()
@@ -52,8 +40,6 @@ class ImageClassificationActivity : AppCompatActivity() {
     private var image_uri: Uri? = null
 
     var classifier : Classifier? = null
-
-
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -123,10 +109,6 @@ class ImageClassificationActivity : AppCompatActivity() {
         }
     }
 
-
-
-
-
     //TODO pass image to the model and shows the results on screen
     fun doInference() {
         val bitmap : Bitmap? = uriToBitmap(image_uri!!)
@@ -165,9 +147,6 @@ class ImageClassificationActivity : AppCompatActivity() {
                 startActivity(i)
         }
 
-
-
-
         }
 
     }
@@ -186,8 +165,6 @@ class ImageClassificationActivity : AppCompatActivity() {
         }
         return null
     }
-
-
 
     //TODO rotate image if image captured on samsung devices
     //Most phone cameras are landscape, meaning if you take the photo in portrait, the resulting photos will be rotated 90 degrees.
