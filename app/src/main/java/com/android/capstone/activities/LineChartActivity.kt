@@ -11,12 +11,11 @@ private lateinit var binding : LineChartActivityBinding
 class LineChartActivity : AppCompatActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            setContentView(R.layout.line_chart_activity)
+            binding = LineChartActivityBinding.inflate(layoutInflater)
+            setContentView(binding.root)
 
             val intentValue = intent.getStringExtra("Confidence")
 
-
-            
             binding.receivedValueId.apply{
                 text = intentValue
             }
