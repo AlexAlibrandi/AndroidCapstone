@@ -95,6 +95,7 @@ class ImageClassificationActivity : AppCompatActivity() {
         startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -110,6 +111,7 @@ class ImageClassificationActivity : AppCompatActivity() {
     }
 
     //TODO pass image to the model and shows the results on screen
+    @RequiresApi(Build.VERSION_CODES.O)
     fun doInference() {
         val bitmap : Bitmap? = uriToBitmap(image_uri!!)
         val rotated : Bitmap? = rotateBitmap(bitmap!!)
