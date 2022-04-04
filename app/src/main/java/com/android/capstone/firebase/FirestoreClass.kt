@@ -42,18 +42,22 @@ class FirestoreClass {
             "id" to getCurrentUserId(),
             "date" to Timestamp(Date())
         )
-        val batch = mFireStore.batch()
-        batch.set(ResultsBatch, user, SetOptions.merge())
-        batch.commit().addOnSuccessListener {
-            Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!")
-        }.addOnFailureListener{ e -> Log.w(ContentValues.TAG, "Error writing document", e) }
-        }
-//            mFireStore.runBatch{ batch ->
-//            batch.set(user)
-//            .addOnSuccessListener {
-//                Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!")
-//            }.addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
+//        val batch = mFireStore.batch()
+//        batch.set(ResultsBatch, user, SetOptions.merge())
+//        batch.commit().addOnSuccessListener {
+//            Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!")
+//        }.addOnFailureListener{ e -> Log.w(ContentValues.TAG, "Error writing document", e) }
+//        }
+            mFireStore.runBatch{ batch ->
+                batch.set(ResultsBatch, user)
+            }
+            .addOnSuccessListener {
+                Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!")
+            }.addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
+    }
 
+    fun getCurrentUserId(): String {
+        return FirebaseAuth.getInstance().currentUser!!.uid
     }
 
 //        com.android.capstone.imageclassification.mFireStore.collection(Constants.RESULTS).document(getCurrentUserId())
@@ -61,8 +65,3 @@ class FirestoreClass {
 //            .addOnSuccessListener {
 //                Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!") }
 //            .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
-    }
-
-    fun getCurrentUserId(): String{
-        return  FirebaseAuth.getInstance().currentUser!!.uid
-    }
