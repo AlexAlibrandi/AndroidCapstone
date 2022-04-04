@@ -33,8 +33,14 @@ class DashboardActivity : AppCompatActivity() {
             val intent = Intent(this@DashboardActivity, LoginActivity::class.java)
             startActivity(intent)
         }
+
         dashboardBinding.rashInfo.setOnClickListener {
             val intent = Intent(this@DashboardActivity, RashInfoActivity::class.java)
+            startActivity(intent)
+        }
+
+        dashboardBinding.progressChart.setOnClickListener{
+            val intent = Intent(this@DashboardActivity, LineChartActivity::class.java)
             startActivity(intent)
         }
 
