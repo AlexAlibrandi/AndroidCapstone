@@ -12,10 +12,9 @@
         android:layout_height="370dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
+        app:layout_constraintVertical_bias="0.432"
         app:srcCompat="@drawable/ic_undraw_performance_overview_re_mqrq" />
 
     <Button
@@ -27,10 +26,10 @@
         android:text="LogOut"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -41,17 +40,17 @@
         android:text="Good Morning Alex👋"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.783" />
 
     <Button
         android:id="@+id/imageRec"
         android:layout_width="161dp"
         android:layout_height="133dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="240dp"
         android:text="Image Recognition"
         app:cornerRadius="35dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +60,7 @@
         android:id="@+id/liveFeed"
         android:layout_width="156dp"
         android:layout_height="133dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="244dp"
         android:layout_marginEnd="32dp"
         android:text="Live feed recognition"
         app:cornerRadius="35dp"
@@ -72,9 +71,9 @@
         android:id="@+id/button3"
         android:layout_width="283dp"
         android:layout_height="71dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="124dp"
         android:backgroundTint="#FFFFFF"
-        android:text="Results Page"
+        android:text="Progress Chart"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +83,7 @@
         android:id="@+id/imageView2"
         android:layout_width="124dp"
         android:layout_height="71dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,5 +91,17 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_baseline_person_24"
         app:tint="#171717" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="283dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Rash info page"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
