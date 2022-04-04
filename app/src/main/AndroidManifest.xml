@@ -12,10 +12,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Don't be rash"
+        android:label="Don&apos;t be rash"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidCapstone">
+        <activity
+            android:name=".activities.RashInfoActivity"
+            android:exported="false" />
         <activity
             android:name=".imageclassification.LiveFeedClassificationActivity"
             android:exported="false" />

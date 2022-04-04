@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.android.capstone.databinding.DashboardBinding
 import com.android.capstone.imageclassification.ImageClassificationActivity
 import com.android.capstone.imageclassification.LiveFeedClassificationActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -30,6 +31,10 @@ class DashboardActivity : AppCompatActivity() {
         dashboardBinding.logout.setOnClickListener{
             Firebase.auth.signOut()
             val intent = Intent(this@DashboardActivity, LoginActivity::class.java)
+            startActivity(intent)
+        }
+        dashboardBinding.rashInfo.setOnClickListener {
+            val intent = Intent(this@DashboardActivity, RashInfoActivity::class.java)
             startActivity(intent)
         }
 
