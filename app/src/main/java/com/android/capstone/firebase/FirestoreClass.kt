@@ -32,25 +32,19 @@ class FirestoreClass {
             }
     }
 
-
     @RequiresApi(Build.VERSION_CODES.O)
     fun writeDataOnFirestore(activity: ImageClassificationActivity, results: ResultsModel) {
-        val ResultsBatch = mFireStore.collection(Constants.RESULTS).document(getCurrentUserId())
+        val ResultsBatch = mFireStore.collection(Constants.RESULTS).document()
         val user = hashMapOf(
             "title" to results.title,
             "confidence" to results.confidence,
             "id" to getCurrentUserId(),
             "date" to Timestamp(Date())
         )
-//        val batch = mFireStore.batch()
-//        batch.set(ResultsBatch, user, SetOptions.merge())
-//        batch.commit().addOnSuccessListener {
-//            Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!")
-//        }.addOnFailureListener{ e -> Log.w(ContentValues.TAG, "Error writing document", e) }
-//        }
-            mFireStore.runBatch{ batch ->
-                batch.set(ResultsBatch, user)
-            }
+
+        mFireStore.runBatch { batch ->
+            batch.set(ResultsBatch, user)
+        }
             .addOnSuccessListener {
                 Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!")
             }.addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
@@ -59,9 +53,4 @@ class FirestoreClass {
     fun getCurrentUserId(): String {
         return FirebaseAuth.getInstance().currentUser!!.uid
     }
-
-//        com.android.capstone.imageclassification.mFireStore.collection(Constants.RESULTS).document(getCurrentUserId())
-//            .set(user)
-//            .addOnSuccessListener {
-//                Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!") }
-//            .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
+}
