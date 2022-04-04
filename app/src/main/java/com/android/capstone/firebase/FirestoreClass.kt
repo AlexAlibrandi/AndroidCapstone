@@ -1,5 +1,3 @@
-package com.android.capstone.firebase
-
 import android.content.ContentValues
 import android.os.Build
 import android.util.Log
