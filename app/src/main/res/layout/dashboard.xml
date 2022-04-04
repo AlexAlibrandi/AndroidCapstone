@@ -85,7 +85,7 @@
         android:layout_height="71dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:tint="#171717"
+        app:tint="#171717"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -1,5 +1,6 @@
 package com.android.capstone.activities
 
+import FirestoreClass
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -7,7 +8,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.capstone.databinding.ActivityRegisterBinding
-import com.android.capstone.firebase.FirestoreClass
 import com.android.capstone.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

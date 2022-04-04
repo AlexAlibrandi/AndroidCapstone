@@ -1,5 +1,6 @@
 package com.android.capstone.imageclassification
 
+import FirestoreClass
 import com.android.capstone.activities.LineChartActivity
 import android.Manifest
 import android.annotation.SuppressLint
@@ -20,12 +21,12 @@ import android.view.View.OnLongClickListener
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.android.capstone.databinding.ActivityImageClassificationBinding
-import com.android.capstone.firebase.FirestoreClass
 import com.android.capstone.models.ResultsModel
 import com.google.firebase.firestore.FirebaseFirestore
 import java.io.IOException
 
- val mFireStore = FirebaseFirestore.getInstance()
+@SuppressLint("StaticFieldLeak")
+val mFireStore = FirebaseFirestore.getInstance()
 
 class ImageClassificationActivity : AppCompatActivity() {
 
