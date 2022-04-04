@@ -9,6 +9,7 @@ data class ResultsModel(
 
     val title: String = "",
     val confidence: Float,
-    val id: String = ""
+    val id: String = "",
+    val date: String = ""
 
     ) : Parcelable
