@@ -30,7 +30,6 @@ class FirestoreClass {
             }
     }
 
-
     @RequiresApi(Build.VERSION_CODES.O)
     fun writeDataOnFirestore(activity: ImageClassificationActivity, results: ResultsModel) {
         val ResultsBatch = mFireStore.collection(Constants.RESULTS).document()

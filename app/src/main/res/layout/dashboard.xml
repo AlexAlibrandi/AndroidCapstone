@@ -86,11 +86,11 @@
         android:layout_height="71dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="16dp"
-        android:tint="#171717"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_baseline_person_24" />
+        app:srcCompat="@drawable/ic_baseline_person_24"
+        app:tint="#171717" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
