@@ -3,7 +3,6 @@ package com.android.capstone.activities
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.android.capstone.R
-import com.android.capstone.databinding.LineChartActivityBinding
 import com.android.capstone.models.ResultsModel
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
@@ -27,17 +26,13 @@ class LineChartActivity : AppCompatActivity() {
     private lateinit var lineChart: LineChart
     private var scoreList = ArrayList<ResultsModel>()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.line_chart_activity)
 
-
         lineChart = findViewById(R.id.lineChart)
 
-
         initLineChart()
-
 
         setDataToLineChart()
 
@@ -57,10 +52,8 @@ class LineChartActivity : AppCompatActivity() {
         //remove legend
         lineChart.legend.isEnabled = false
 
-
         //remove description label
         lineChart.description.isEnabled = false
-
 
         //add animation
         lineChart.animateX(1000, Easing.EaseInSine)
@@ -73,7 +66,6 @@ class LineChartActivity : AppCompatActivity() {
         xAxis.labelRotationAngle = +90f
 
     }
-
 
     inner class MyAxisFormatter : IndexAxisValueFormatter() {
 
@@ -115,10 +107,8 @@ class LineChartActivity : AppCompatActivity() {
             val lineData = LineData(lineDataSet)
             lineChart.data = lineData
         }
-
     }
-
-    }
+}
 
 
 

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android.capstone.databinding.AboutUsBinding
 
-
 private lateinit var aboutUsBinding: AboutUsBinding
 
 class AboutUsActivity : AppCompatActivity() {

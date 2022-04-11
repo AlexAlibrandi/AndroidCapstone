@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5">
+    android:background="#56201C1C">
 
     <ImageView
         android:id="@+id/imageViewAboutUsDoctor"
@@ -50,12 +50,11 @@
         android:id="@+id/button_aboutUsContinue"
         android:layout_width="290dp"
         android:layout_height="71dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#6C63FF"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_corner_view2"
+        android:backgroundTint="#FFFFFF"
         android:text="Continue"
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:cornerRadius="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"

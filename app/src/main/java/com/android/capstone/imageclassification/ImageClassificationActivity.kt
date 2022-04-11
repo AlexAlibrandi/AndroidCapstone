@@ -34,7 +34,6 @@ class ImageClassificationActivity : AppCompatActivity() {
 
     private val mFireStore = FirebaseFirestore.getInstance()
 
-
     private val RESULT_LOAD_IMAGE = 123
     val IMAGE_CAPTURE_CODE = 654
     private val PERMISSION_CODE = 321
@@ -149,9 +148,7 @@ class ImageClassificationActivity : AppCompatActivity() {
             startActivity(intent)
                 startActivity(i)
         }
-
         }
-
     }
 
     //TODO takes URI of the image and returns bitmap

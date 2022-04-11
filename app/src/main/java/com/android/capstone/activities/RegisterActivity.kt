@@ -97,13 +97,16 @@ class RegisterActivity : AppCompatActivity() {
                     val user = User(firebaseUser.uid,first,last,registeredEmail)
                     FirestoreClass().registerUser(this,user)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    intent.putExtra("user_id",firebaseUser.uid)
+                    intent.putExtra("email_id", email)
                     startActivity(intent)
+                    finish()
                 }
             }.addOnFailureListener { exception ->
                 Toast.makeText(applicationContext, exception.localizedMessage, Toast.LENGTH_LONG)
                     .show()
             }
+            }
         }
-    }
     }
 }

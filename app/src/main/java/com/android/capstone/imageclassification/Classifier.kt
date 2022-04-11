@@ -50,7 +50,6 @@ class Classifier(assetManager: AssetManager, modelPath: String, labelPath: Strin
 
     private fun loadLabelList(assetManager: AssetManager, labelPath: String): List<String> {
         return assetManager.open(labelPath).bufferedReader().useLines { it.toList() }
-
     }
 
     /**

@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.android.capstone.R
 import de.hdodenhof.circleimageview.CircleImageView
@@ -76,5 +75,4 @@ class RashAdapter(
         return  rashNameList.size
 
     }
-
 }

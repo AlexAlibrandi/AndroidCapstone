@@ -4,12 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android.capstone.databinding.DashboardBinding
+import com.android.capstone.databinding.DashboardBinding.*
 import com.android.capstone.imageclassification.ImageClassificationActivity
 import com.android.capstone.imageclassification.LiveFeedClassificationActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-
 
 private lateinit var dashboardBinding: DashboardBinding
 
@@ -17,8 +18,14 @@ class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        dashboardBinding = DashboardBinding.inflate(layoutInflater)
+        dashboardBinding = inflate(layoutInflater)
         setContentView(dashboardBinding.root)
+
+        val auth = FirebaseAuth.getInstance()
+        val user = auth.currentUser!!
+        val email = user.email
+
+        ("Welcome" + " " + email.toString()).also { dashboardBinding.editTextTextPersonName.text = it }
 
         dashboardBinding.imageRec.setOnClickListener {
             val intent = Intent(this@DashboardActivity, ImageClassificationActivity::class.java)
@@ -43,6 +50,5 @@ class DashboardActivity : AppCompatActivity() {
             val intent = Intent(this@DashboardActivity, LineChartActivity::class.java)
             startActivity(intent)
         }
-
     }
 }
