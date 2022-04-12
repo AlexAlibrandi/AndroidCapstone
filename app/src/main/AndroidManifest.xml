@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.android.capstone">
+    package="com.android.capstone" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,7 +19,7 @@
         android:label="Don&apos;t be rash"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidCapstone">
+        android:theme="@style/Theme.AndroidCapstone" >
         <activity
             android:name=".activities.RashInfoActivity"
             android:exported="false" />
@@ -33,7 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.SplashScreen"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,7 +59,6 @@
         <activity
             android:name=".activities.LineChartActivity"
             android:exported="true" />
-
 
         <meta-data
             android:name="preloaded_fonts"
