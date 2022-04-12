@@ -1,8 +1,12 @@
 package com.android.capstone.activities
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.android.capstone.R
+import com.android.capstone.databinding.LineChartActivityBinding
 import com.android.capstone.models.ResultsModel
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
@@ -16,11 +20,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
-
-
-
+@SuppressLint("StaticFieldLeak")
 val db = FirebaseFirestore.getInstance()
 var query: Query = db.collection("Results").orderBy("date", Query.Direction.DESCENDING)
+private lateinit var binding: LineChartActivityBinding
 
 class LineChartActivity : AppCompatActivity() {
 
@@ -29,14 +32,17 @@ class LineChartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.line_chart_activity)
+        binding = LineChartActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         lineChart = findViewById(R.id.lineChart)
-
         initLineChart()
-
         setDataToLineChart()
 
+        binding.backDash.setOnClickListener {
+            val intent = Intent(this, DashboardActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initLineChart() {
