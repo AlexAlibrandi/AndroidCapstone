@@ -68,27 +68,27 @@ class LineChartActivity : AppCompatActivity() {
         //add animation
         lineChart.animateX(1000, Easing.EaseInSine)
 
-        // to draw label on xAxis
-        xAxis.position = XAxis.XAxisPosition.BOTTOM
-        xAxis.valueFormatter = MyAxisFormatter()
-        xAxis.setDrawLabels(true)
-        xAxis.granularity = 1f
-        xAxis.labelRotationAngle = +90f
+//        // to draw label on xAxis
+//        xAxis.position = XAxis.XAxisPosition.BOTTOM
+//        xAxis.valueFormatter = MyAxisFormatter()
+//        xAxis.setDrawLabels(true)
+//        xAxis.granularity = 1f
+//        xAxis.labelRotationAngle = +90f
 
     }
 
-    inner class MyAxisFormatter : IndexAxisValueFormatter() {
-
-        override fun getAxisLabel(value: Float, axis: AxisBase?): String {
-            val index = value.toInt()
-            return if (index < scoreList.size) {
-                //slice id to 5 characters
-                scoreList[index].id.substring(0, 5)
-            } else {
-                "error"
-            }
-        }
-    }
+//    inner class MyAxisFormatter : IndexAxisValueFormatter() {
+//
+//        override fun getAxisLabel(value: Float, axis: AxisBase?): String {
+//            val index = value.toInt()
+//            return if (index < scoreList.size) {
+//                //slice id to 5 characters
+//                scoreList[index].id.substring(0, 5)
+//            } else {
+//                "error"
+//            }
+//        }
+//    }
 
     private fun setDataToLineChart() {
 
