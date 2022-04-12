@@ -8,13 +8,29 @@
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/lineChart"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:padding="9dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:padding="9dp"
+            tools:layout_editor_absoluteX="205dp"
+            tools:layout_editor_absoluteY="203dp">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+        <TextView
+            android:id="@+id/LineChartTitle"
+            android:layout_width="82dp"
+            android:layout_height="47dp"
+            android:text="Eczema"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.01999998" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

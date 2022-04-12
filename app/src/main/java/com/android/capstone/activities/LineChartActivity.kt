@@ -12,6 +12,7 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
@@ -72,7 +73,7 @@ class LineChartActivity : AppCompatActivity() {
         override fun getAxisLabel(value: Float, axis: AxisBase?): String {
             val index = value.toInt()
             return if (index < scoreList.size) {
-                scoreList[index].title
+                scoreList[index].date
             } else {
                 "error"
             }
@@ -83,12 +84,17 @@ class LineChartActivity : AppCompatActivity() {
 
         query.get().addOnSuccessListener {
             for (document in it) {
+                //If user id is the same as the user id in the document, add the document to the list
+
                 val resultsModel = ResultsModel(
                     document.data["title"].toString(),
                     document.data["confidence"].toString().toFloat(),
+                    document.data["id"].toString(),
                     document.data["date"].toString()
                 )
-                scoreList.add(resultsModel)
+                if (resultsModel.id == FirebaseAuth.getInstance().currentUser!!.uid) {
+                    scoreList.add(resultsModel)
+                }
             }
 
             val entries = ArrayList<Entry>()
