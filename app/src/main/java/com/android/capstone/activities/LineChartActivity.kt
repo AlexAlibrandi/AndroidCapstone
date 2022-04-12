@@ -1,5 +1,6 @@
 package com.android.capstone.activities
 
+import android.icu.text.DateFormat.getDateInstance
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.android.capstone.R
@@ -15,8 +16,8 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-
-
+import java.text.SimpleDateFormat
+import kotlin.collections.ArrayList
 
 
 val db = FirebaseFirestore.getInstance()
@@ -60,7 +61,7 @@ class LineChartActivity : AppCompatActivity() {
         lineChart.animateX(1000, Easing.EaseInSine)
 
         // to draw label on xAxis
-        xAxis.position = XAxis.XAxisPosition.BOTTOM_INSIDE
+        xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.valueFormatter = MyAxisFormatter()
         xAxis.setDrawLabels(true)
         xAxis.granularity = 1f
@@ -73,7 +74,8 @@ class LineChartActivity : AppCompatActivity() {
         override fun getAxisLabel(value: Float, axis: AxisBase?): String {
             val index = value.toInt()
             return if (index < scoreList.size) {
-                scoreList[index].date
+                //slice id to 5 characters
+                scoreList[index].id.substring(0, 5)
             } else {
                 "error"
             }
@@ -85,7 +87,6 @@ class LineChartActivity : AppCompatActivity() {
         query.get().addOnSuccessListener {
             for (document in it) {
                 //If user id is the same as the user id in the document, add the document to the list
-
                 val resultsModel = ResultsModel(
                     document.data["title"].toString(),
                     document.data["confidence"].toString().toFloat(),
