@@ -1,9 +1,10 @@
 package com.android.capstone.activities
 
-import android.icu.text.DateFormat.getDateInstance
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.android.capstone.R
+import com.android.capstone.databinding.LineChartActivityBinding
 import com.android.capstone.models.ResultsModel
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
@@ -16,12 +17,12 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import java.text.SimpleDateFormat
 import kotlin.collections.ArrayList
 
 
 val db = FirebaseFirestore.getInstance()
 var query: Query = db.collection("Results").orderBy("date", Query.Direction.DESCENDING)
+private lateinit var binding: LineChartActivityBinding
 
 class LineChartActivity : AppCompatActivity() {
 
@@ -29,8 +30,15 @@ class LineChartActivity : AppCompatActivity() {
     private var scoreList = ArrayList<ResultsModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.line_chart_activity)
+        binding = LineChartActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.backDash.setOnClickListener {
+            val intent = Intent(this, DashboardActivity::class.java)
+            startActivity(intent)
+        }
 
         lineChart = findViewById(R.id.lineChart)
 
