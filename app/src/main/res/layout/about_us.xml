@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#56201C1C">
+    android:background="#56201C1C"
+    android:backgroundTint="#D2090808">
 
     <ImageView
         android:id="@+id/imageViewAboutUsDoctor"
@@ -46,17 +47,20 @@
         app:layout_constraintStart_toStartOf="@+id/textViewAboutUs"
         app:layout_constraintTop_toBottomOf="@+id/textViewAboutUs" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_aboutUsContinue"
         android:layout_width="290dp"
         android:layout_height="71dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/rounded_corner_view2"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="#D2090808"
         android:text="Continue"
+        android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsDescription"
+        app:layout_constraintVertical_bias="0.076" />
 </androidx.constraintlayout.widget.ConstraintLayout>
