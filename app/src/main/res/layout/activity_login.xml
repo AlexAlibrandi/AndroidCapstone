@@ -105,6 +105,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/input_bg"
+                android:clickable="true"
+                android:focusable="true"
                 android:onClick="login"
                 android:text="Login"
                 android:textColor="@color/white"
