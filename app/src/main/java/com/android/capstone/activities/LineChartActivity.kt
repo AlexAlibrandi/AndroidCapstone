@@ -40,9 +40,11 @@ class LineChartActivity : AppCompatActivity() {
             startActivity(intent)
         }
         val intentValue = intent.getStringExtra("Confidence")
+        val intentTitle = intent.getStringExtra("Title")
+
         binding.LineChartTitle.apply{
             if (!intentValue.isNullOrEmpty()) {
-                text = intentValue
+                text = "${intentTitle} ${intentValue}%"
             }
             else{
                 text = "Eczema"
