@@ -31,7 +31,7 @@ class SplashScreen : AppCompatActivity() {
         topAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation)
         bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
 
-        mainBinding.image.animation = topAnimation
+        mainBinding.text.animation = topAnimation
         mainBinding.welcome.animation = bottomAnimation
         mainBinding.slogan.animation = bottomAnimation
 
