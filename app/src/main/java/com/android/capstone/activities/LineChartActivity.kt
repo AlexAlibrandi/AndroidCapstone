@@ -21,7 +21,7 @@ import kotlin.collections.ArrayList
 
 
 val db = FirebaseFirestore.getInstance()
-var query: Query = db.collection("Results").orderBy("date", Query.Direction.DESCENDING)
+var query: Query = db.collection("Results").orderBy("date", Query.Direction.ASCENDING)
 private lateinit var binding: LineChartActivityBinding
 
 class LineChartActivity : AppCompatActivity() {
@@ -39,6 +39,16 @@ class LineChartActivity : AppCompatActivity() {
             val intent = Intent(this, DashboardActivity::class.java)
             startActivity(intent)
         }
+        val intentValue = intent.getStringExtra("Confidence")
+        binding.LineChartTitle.apply{
+            if (!intentValue.isNullOrEmpty()) {
+                text = intentValue
+            }
+            else{
+                text = "Eczema"
+            }
+        }
+
 
         lineChart = findViewById(R.id.lineChart)
 
@@ -67,6 +77,7 @@ class LineChartActivity : AppCompatActivity() {
 
         //add animation
         lineChart.animateX(1000, Easing.EaseInSine)
+        //use query to get the most recent data and show on one as a string
 
 //        // to draw label on xAxis
 //        xAxis.position = XAxis.XAxisPosition.BOTTOM
