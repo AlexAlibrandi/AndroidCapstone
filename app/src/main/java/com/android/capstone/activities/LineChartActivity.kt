@@ -8,12 +8,10 @@ import com.android.capstone.databinding.LineChartActivityBinding
 import com.android.capstone.models.ResultsModel
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
-import com.github.mikephil.charting.components.AxisBase
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -51,28 +49,25 @@ class LineChartActivity : AppCompatActivity() {
             }
         }
 
-
         lineChart = findViewById(R.id.lineChart)
-
         initLineChart()
-
         setDataToLineChart()
 
     }
 
     private fun initLineChart() {
 
-//        hide grid lines
-        lineChart.axisLeft.setDrawGridLines(false)
+//      hide grid lines
+        lineChart.axisLeft.setDrawGridLines(true)
         val xAxis: XAxis = lineChart.xAxis
-        xAxis.setDrawGridLines(false)
-        xAxis.setDrawAxisLine(false)
+        xAxis.setDrawGridLines(true)
+        xAxis.setDrawAxisLine(true)
 
         //remove right y-axis
         lineChart.axisRight.isEnabled = false
 
         //remove legend
-        lineChart.legend.isEnabled = false
+        lineChart.legend.isEnabled = true
 
         //remove description label
         lineChart.description.isEnabled = false
@@ -81,12 +76,11 @@ class LineChartActivity : AppCompatActivity() {
         lineChart.animateX(1000, Easing.EaseInSine)
         //use query to get the most recent data and show on one as a string
 
-//        // to draw label on xAxis
-//        xAxis.position = XAxis.XAxisPosition.BOTTOM
-//        xAxis.valueFormatter = MyAxisFormatter()
-//        xAxis.setDrawLabels(true)
-//        xAxis.granularity = 1f
-//        xAxis.labelRotationAngle = +90f
+        // to draw label on xAxis
+        xAxis.position = XAxis.XAxisPosition.BOTTOM
+        xAxis.setDrawLabels(true)
+        xAxis.granularity = 1f
+        xAxis.labelRotationAngle = 0f
 
     }
 
@@ -126,8 +120,8 @@ class LineChartActivity : AppCompatActivity() {
             }
 
             val lineDataSet = LineDataSet(entries, "Score")
-            lineDataSet.setDrawCircles(false)
-            lineDataSet.setDrawValues(false)
+            lineDataSet.setDrawCircles(true)
+            lineDataSet.setDrawValues(true)
             lineDataSet.setDrawFilled(true)
             lineDataSet.fillColor = resources.getColor(R.color.black)
             lineDataSet.fillAlpha = 100
