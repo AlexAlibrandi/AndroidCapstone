@@ -11,8 +11,10 @@
         android:id="@+id/imageViewAboutUsDoctor"
         android:layout_width="411dp"
         android:layout_height="338dp"
+        android:layout_marginBottom="552dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAboutUs"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_undraw_doctor_kw_5_l" />
@@ -21,7 +23,7 @@
         android:id="@+id/textViewAboutUs"
         android:layout_width="162dp"
         android:layout_height="37dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/oxygen_light"
         android:text="About Us"
         android:textAlignment="center"
@@ -37,7 +39,7 @@
         android:id="@+id/textViewAboutUsDescription"
         android:layout_width="347dp"
         android:layout_height="185dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="36dp"
         android:lineSpacingExtra="8sp"
         android:text="We are an application interface that allows users to use thier photo gallery or live footage to see what kind of skin disease they may have. Through this application we collect data to help ensure better results. We will also send user to a doctor nearby that will help them get immediate medical treatment. Thank you for using our application."
         android:textAlignment="center"
@@ -62,5 +64,5 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsDescription"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
