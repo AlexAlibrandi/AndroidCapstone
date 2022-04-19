@@ -50,5 +50,9 @@ class DashboardActivity : AppCompatActivity() {
             val intent = Intent(this@DashboardActivity, LineChartActivity::class.java)
             startActivity(intent)
         }
+        dashboardBinding.chatButton.setOnClickListener{
+            val intent = Intent(this@DashboardActivity, ChatActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -59,6 +59,12 @@
         <activity
             android:name=".activities.LineChartActivity"
             android:exported="true" />
+        <activity
+            android:name=".activities.ChatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ChannelActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
