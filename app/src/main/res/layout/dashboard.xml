@@ -128,7 +128,6 @@
         android:id="@+id/chatButton"
         android:layout_width="100dp"
         android:layout_height="49dp"
-        android:layout_marginTop="4dp"
         android:background="@drawable/rounded_corner_view2"
         android:backgroundTint="#D2090808"
         android:text="Chat"
@@ -137,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.98" />
+        app:layout_constraintTop_toBottomOf="@+id/rashInfo"
+        app:layout_constraintVertical_bias="0.76" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

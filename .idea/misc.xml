@@ -13,7 +13,7 @@
         <entry key="app/src/main/res/drawable/input_bg.xml" value="0.259" />
         <entry key="app/src/main/res/drawable/rounded_corner_view.xml" value="0.1735" />
         <entry key="app/src/main/res/font/aldrich.xml" value="0.315625" />
-        <entry key="app/src/main/res/layout/about_us.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/about_us.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_channel.xml" value="0.2556648140230868" />
         <entry key="app/src/main/res/layout/activity_firebase_persistence.xml" value="0.20304054054054055" />
         <entry key="app/src/main/res/layout/activity_firestore_pers.xml" value="0.19256756756756757" />

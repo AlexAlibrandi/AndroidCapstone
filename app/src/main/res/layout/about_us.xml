@@ -38,7 +38,7 @@
         android:id="@+id/textViewAboutUsDescription"
         android:layout_width="347dp"
         android:layout_height="185dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:lineSpacingExtra="8sp"
         android:text="We are an application interface that allows users to use thier photo gallery or live footage to see what kind of skin disease they may have. Through this application we collect data to help ensure better results. We will also send user to a doctor nearby that will help them get immediate medical treatment. Thank you for using our application."
         android:textAlignment="center"
@@ -58,8 +58,8 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsDescription"
-        app:layout_constraintVertical_bias="0.767" />
+        app:layout_constraintVertical_bias="0.538" />
 </androidx.constraintlayout.widget.ConstraintLayout>
